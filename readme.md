@@ -1,5 +1,7 @@
 # ws-events
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/goto-bus-stop/ws-events.svg)](https://greenkeeper.io/)
+
 Minimal Events for WebSockets.
 
 ## Example
