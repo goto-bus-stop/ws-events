@@ -4,8 +4,8 @@ Minimal Events for WebSockets.
 
 ## Example
 
-`ws-events` decorates a WebSocket instance. It works both on the server and the
-client side.
+`ws-events` decorates a WebSocket instance. It works in node.js and in
+the browser with [browserify](https://browserify.org).
 
 On the server side:
 
