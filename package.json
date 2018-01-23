@@ -1,10 +1,11 @@
 {
   "name": "ws-events",
-  "description": "Minimal Events/RPC for WebSockets.",
-  "version": "1.0.0",
-  "repository": "goto-bus-stop/ws-events",
+  "description": "Wildcard supported Events for WebSockets.",
+  "version": "1.1.",
+  "repository": "dominicporteous/ws-events",
   "author": "Renée Kooi <renee@kooi.me>",
+  "maintainer": "Dominic Porteous <dominic@odom.gs>",
   "dependencies": {
-    "component-emitter": "^1.2.1"
+    "eventemitter2": "^5.0.1"
   }
 }
