@@ -2,7 +2,7 @@ var EventEmitter2 = require('eventemitter2').EventEmitter2;
 
 module.exports = function wsEvents (sock, opts) {
   var options = opts || {};
-  var logger = options.logger || console.log;
+  var logger = options.logger || function(){};
 
   var listeners = new EventEmitter2({
     wildcard: options.wildcard || true,
@@ -24,7 +24,7 @@ module.exports = function wsEvents (sock, opts) {
 
   function onmessage( packet ) {
 
-    console.log( 'd:', packet.data );
+    logger( 'om:', packet.data );
 
     var json, event, args;
     try {
@@ -40,7 +40,7 @@ module.exports = function wsEvents (sock, opts) {
 
   function onmessagehandler( data ){
 
-    console.log('mh:', data)
+    logger('mh:', data)
 
     var json, event, args;
     try {
