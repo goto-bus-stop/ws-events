@@ -1,7 +1,13 @@
-var Emitter = require('component-emitter')
+var EventEmitter2 = require('eventemitter2').EventEmitter2;
 
-module.exports = function wsEvents (sock) {
-  var listeners = new Emitter()
+module.exports = function wsEvents (sock, opts) {
+  var options = opts || {};
+  
+  var listeners = new EventEmitter2({
+    wildcard: options.wildcard || true,
+    maxListeners: options.maxListeners || 20,
+    verboseMemoryLeak: options.errorOnLeak || true
+  });
   var onopenHandlers = []
 
   function onmessage (event) {
@@ -62,8 +68,7 @@ module.exports = function wsEvents (sock) {
   events.emit = emit
   events.on = on
   events.off = off
-  events.listeners = listeners.listeners.bind(listeners)
-  events.hasListeners = listeners.hasListeners.bind(listeners)
+  events.listeners = listeners.listenersAny.bind(listeners)
 
   return events
 }
