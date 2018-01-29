@@ -58,7 +58,6 @@ module.exports = function wsEvents (sock, opts) {
     var event = data[0];
     var args = data[1];
 
-    console.log( 'p:', event, args, [ event ].concat( args ) );
     listeners.emit.apply(listeners, [ event ].concat( args ) );
 
   }
